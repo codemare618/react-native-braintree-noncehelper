@@ -1,7 +1,22 @@
 import { NativeModules } from 'react-native';
 
+interface CreditCardOptions {
+  number: string;
+  expirationMonth: string;
+  expirationYear: string;
+  cvv: string;
+  postalCode?: string;
+}
+
+interface CreditCardNonce {
+  nonce: string;
+  type: string;
+  localizedDescription: string;
+  default: boolean;
+}
+
 type RnBraintreeNoncehelperType = {
-  multiply(a: number, b: number): Promise<number>;
+  createNonce(clientToken: string, options: CreditCardOptions): Promise<CreditCardNonce>;
 };
 
 const { RnBraintreeNoncehelper } = NativeModules;

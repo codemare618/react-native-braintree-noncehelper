@@ -6,7 +6,7 @@ buildscript {
         }
 
         dependencies {
-            classpath 'com.android.tools.build:gradle:3.5.3'
+            classpath 'com.android.tools.build:gradle:3.5.4'
         }
     }
 }
@@ -21,7 +21,7 @@ android {
     compileSdkVersion safeExtGet('RnBraintreeNoncehelper_compileSdkVersion', 29)
     buildToolsVersion safeExtGet('RnBraintreeNoncehelper_buildToolsVersion', '29.0.2')
     defaultConfig {
-        minSdkVersion safeExtGet('RnBraintreeNoncehelper_minSdkVersion', 16)
+        minSdkVersion safeExtGet('RnBraintreeNoncehelper_minSdkVersion', 21)
         targetSdkVersion safeExtGet('RnBraintreeNoncehelper_targetSdkVersion', 29)
         versionCode 1
         versionName "1.0"
@@ -55,4 +55,5 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
+  implementation 'com.braintreepayments.api:braintree:3.17.4'
 }
