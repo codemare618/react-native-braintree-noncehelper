@@ -14,8 +14,13 @@ npm install rn-braintree-noncehelper
 import RnBraintreeNoncehelper from "rn-braintree-noncehelper";
 
 // ...
-
-const result = await RnBraintreeNoncehelper.multiply(3, 7);
+const result = await RnBraintreeNoncehelper.createNonce(authToken, {
+  number: 'XXX',
+  expirationMonth: 'XX',
+  expirationYear: 'XXXX',
+  cvv: 'XXX',
+  postalCode: 'XXXX'      // This is optional parameter
+});
 ```
 
 ## Contributing
